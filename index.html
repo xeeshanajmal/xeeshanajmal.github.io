@@ -19,17 +19,17 @@
 /* Layout: hash-routed pages (home, research, skills, background, contact) in one 1080px column. The circuit panel on Home is the signature moment. */
 :root{
   --bg:#f4f6f8; --surface:#ffffff; --fg:#14202b; --muted:#56657a; --line:#d9e0e8;
-  --accent:#1f5f8b; --accent-soft:#e3eef6; --flag:#b25e0c; --flag-soft:#fbeedd; --wire:#9aa8b8;
+  --accent:#1f5f8b; --accent-soft:#e3eef6; --flag:#b25e0c; --flag-soft:#fbeedd; --wire:#9aa8b8; --good:#1d7a4a; --good-soft:#e2f4ea;
   --display:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0d141b; --surface:#131d27; --fg:#e4ebf2; --muted:#93a3b6; --line:#24323f;
-  --accent:#6fb0de; --accent-soft:#16293a; --flag:#f0a04b; --flag-soft:#2e2112; --wire:#4c5d6f; color-scheme:dark}}
+  --accent:#6fb0de; --accent-soft:#16293a; --flag:#f0a04b; --flag-soft:#2e2112; --wire:#4c5d6f; --good:#5fd394; --good-soft:#12301f; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0d141b; --surface:#131d27; --fg:#e4ebf2; --muted:#93a3b6; --line:#24323f;
-  --accent:#6fb0de; --accent-soft:#16293a; --flag:#f0a04b; --flag-soft:#2e2112; --wire:#4c5d6f; color-scheme:dark}
+  --accent:#6fb0de; --accent-soft:#16293a; --flag:#f0a04b; --flag-soft:#2e2112; --wire:#4c5d6f; --good:#5fd394; --good-soft:#12301f; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6}
@@ -120,6 +120,8 @@ h3{font-size:18px;font-weight:600;margin-bottom:6px}
 .status{font-family:var(--mono);font-size:11.5px;padding:2px 8px;border-radius:999px;border:1px solid}
 .st-rev{color:var(--flag);border-color:var(--flag);background:var(--flag-soft)}
 .st-ok{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.st-acc{color:var(--good);border-color:var(--good);background:var(--good-soft);font-weight:500}
+.pub.is-accepted{border-color:var(--good)}
 .pub p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
 .pub .venue{font-size:14.5px;color:var(--fg);margin-top:6px}
 .pub a{font-size:14.5px}
@@ -321,8 +323,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
     <div class="subhead">Papers</div>
     <div class="pubs">
-      <div class="pub">
-        <div class="meta"><span class="kind">Conference</span><span class="status st-ok">accepted</span></div>
+      <div class="pub is-accepted">
+        <div class="meta"><span class="kind">Conference</span><span class="status st-acc">✓ accepted</span></div>
         <div><h3>FGSM Attack Transferability from Simulation to Quantum Hardware in Network Intrusion Detection</h3>
           <p>Z. Ajmal, K. Halunen, M. Maußner, V. Reers, A. A. Khan</p>
           <div class="venue">IEEE International Conference on Quantum Artificial Intelligence (QAI 2026)</div>
@@ -484,6 +486,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     try{navigator.clipboard.writeText(el.textContent).then(function(){done('Copied')},sel)}catch(e){sel()}
   });
 })();
+</script>
+
+<!-- Visitor stats (GoatCounter). Change "zeeshanajmal" if you registered a different code. -->
+<script data-goatcounter="https://zeeshanajmal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+  // count Research, Skills, Background and Contact as separate pages
+  window.addEventListener('hashchange', function () {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: location.pathname + location.hash });
+    }
+  });
 </script>
 
 </body>
