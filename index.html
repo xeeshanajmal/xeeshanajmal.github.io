@@ -123,6 +123,8 @@ h3{font-size:18px;font-weight:600;margin-bottom:6px}
 .pub p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
 .pub .venue{font-size:14.5px;color:var(--fg);margin-top:6px}
 .pub a{font-size:14.5px}
+.plinks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px}
+.plinks a{font-weight:500}
 .subhead{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:40px 0 14px}
 
 /* skills */
@@ -320,22 +322,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="subhead">Papers</div>
     <div class="pubs">
       <div class="pub">
-        <div class="meta"><span class="kind">Journal</span><span class="status st-rev">under review</span></div>
-        <div><h3>Detecting malicious quantum circuits with machine learning</h3>
-          <p>Uses a new dataset of about 9,000 clean and tampered quantum circuits to train and compare detection models.</p>
-          <div class="venue">ACM Transactions on Software Engineering and Methodology (TOSEM)</div></div>
-      </div>
-      <div class="pub">
-        <div class="meta"><span class="kind">Conference</span><span class="status st-rev">submitted</span></div>
-        <div><h3>Adversarial FGSM attacks on variational quantum classifiers</h3>
-          <p>Measures how gradient-based attacks affect VQC-based QML models, and how far simulator results carry over to quantum hardware.</p>
-          <div class="venue">IEEE QAI 2026</div></div>
+        <div class="meta"><span class="kind">Conference</span><span class="status st-ok">accepted</span></div>
+        <div><h3>FGSM Attack Transferability from Simulation to Quantum Hardware in Network Intrusion Detection</h3>
+          <p>Z. Ajmal, K. Halunen, M. Maußner, V. Reers, A. A. Khan</p>
+          <div class="venue">IEEE International Conference on Quantum Artificial Intelligence (QAI 2026)</div>
+          <div class="plinks"><a href="https://doi.org/10.48550/arXiv.2610.40701" target="_blank" rel="noopener">arXiv preprint ↗</a></div></div>
       </div>
       <div class="pub">
         <div class="meta"><span class="kind">Poster</span><span class="status st-ok">presented</span></div>
         <div><h3>Two Attack Surfaces of a Shared Quantum Computer: Hardware Crosstalk and Circuit-Level Tampering</h3>
-          <p>With Subarna Adhikari, Juuso Herajärvi and colleagues at OUSPG.</p>
-          <div class="venue">VCQ Summer School, University of Vienna, 2026</div></div>
+          <p>Z. Ajmal, S. Adhikari, J. Herajärvi, K. Halunen</p>
+          <div class="venue">VCQ Summer School, University of Vienna, 2026</div>
+          <div class="plinks"><a href="poster.pdf" target="_blank" rel="noopener">View poster (PDF) ↗</a></div></div>
       </div>
       <div class="pub">
         <div class="meta"><span class="kind">MSc thesis</span><span class="status st-ok">2025</span></div>
